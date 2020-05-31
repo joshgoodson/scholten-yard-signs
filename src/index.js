@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import SearchBox from "./components/searchbox"
+import GoogleMap from "./components/google/map"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SearchBox/>
   </React.StrictMode>,
   document.getElementById('root')
 );
