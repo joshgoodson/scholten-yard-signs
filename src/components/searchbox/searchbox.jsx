@@ -1,11 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
-const API_KEY = 'AIzaSyA3AtWnYIr93Lbo0wqtepcSJSRnrTs9dpc';
-
-
-// `https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=Amoeba&types=geocode&&key=AIzaSyA3AtWnYIr93Lbo0wqtepcSJSRnrTs9dpc`
-
 function SearchBox(){
     const [address, setAddress] = React.useState("");
   
@@ -29,7 +24,7 @@ function SearchBox(){
               <div>
                 {suggestions.map(suggestion => {
                   const style = {
-                    backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                    backgroundColor: suggestion.active ? "#f5f5f5" : "#fff"
                   };
   
                   return (

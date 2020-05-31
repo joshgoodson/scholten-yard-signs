@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import SearchBox from "./components/searchbox"
-import GoogleMap from "./components/google/map"
 
 ReactDOM.render(
   <React.StrictMode>
