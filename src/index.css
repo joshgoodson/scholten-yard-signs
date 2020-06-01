@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --light-grey: rgba(32,33,36,0.28);
+  --dark-grey: #737374;
+  box-sizing: border-box;
 }
 
 code {
@@ -12,11 +15,27 @@ code {
     monospace;
 }
 
-.searchbox {
-  padding: 20px;
+@font-face {
+  font-family: 'OatmealStout';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/OatmealStout-Regular.otf'); /* IE9 Compat Modes */
 }
 
-.searchbox__input {
-  padding: 8px;
-  margin: 8px 0px;
+html {
+  box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* ------ HOME PAGE ------- */
+.title {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+

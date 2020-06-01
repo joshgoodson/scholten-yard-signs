@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import SearchBox from "./components/searchbox"
+import Main from "./components/main"
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchBox/>
+    <Main/>
   </React.StrictMode>,
   document.getElementById('root')
 );
