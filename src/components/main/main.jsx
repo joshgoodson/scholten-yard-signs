@@ -3,7 +3,6 @@ import SearchBox from '../searchbox/searchbox'
 import Results from '../results/results'
 import PICKUP_LOCATIONS from '../../constants/ysPickupLocations'
 
-
 export class Main extends React.Component{
     constructor(props) {
         super(props);
@@ -18,7 +17,7 @@ export class Main extends React.Component{
             this.setState({
                 results: PICKUP_LOCATIONS
             })
-            }
+        }
     }
 
     render() {
@@ -29,7 +28,6 @@ export class Main extends React.Component{
             </div>
         )
     }
-
 }
 
 export default Main

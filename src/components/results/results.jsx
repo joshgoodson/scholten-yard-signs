@@ -8,14 +8,13 @@ function Results(props) {
             <div className="results__container">
                 <p className="results__header">Results:</p>
                 {props.results.map(function(result) {
-                    return <Result key={result.id} name={result.name} address={result.address}/>
+                    return <Result key={result.location_id} name={result.name} address={result.address}/>
                 })}
             </div>
         )
     } else {
         return null
     }
-
 }
 
 export default Results
