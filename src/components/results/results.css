@@ -1,0 +1,12 @@
+.results__container {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.results__header {
+    font-weight: bold;
+}
+
+.result {
+    margin-left: 12px;
+}

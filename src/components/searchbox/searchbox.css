@@ -1,0 +1,62 @@
+/* ------- SEARCH BOX ---------- */
+.searchbox {
+    display: flex;
+    justify-content: flex-start;
+  
+    max-width: 450px;
+  
+    margin: 20px auto 0 auto;
+    padding: 8px;
+    border: 1px solid var(--light-grey);
+    border-radius: 2px;
+  }
+  
+  .searchbox:hover, .searchbox:active, .searchbox:focus {
+    box-shadow: 0 1px 6px 0 var(--light-grey);
+  }
+  
+  .searchbox__input {
+    width: 100%;
+    margin-left: 4px;
+    border: 0;
+  
+    font-size: 16px;
+  }
+  
+  .searchbox__input:focus, .searchbox__input:active {
+    border: 0;
+    outline: 0;
+  }
+  
+  .searchbox__icon {
+    height: 28px;
+    width: auto;
+    padding: 4px;
+  
+    fill: var(--light-grey);
+    cursor: pointer;
+  }
+  
+  
+  /* ------- AUTOCOMPLETE ---------- */
+  .suggestions-container {
+    max-width: 450px;
+    margin: 0px auto 0px auto;
+  
+    box-shadow: 0 4px 6px 0 var(--light-grey);
+    border: 1px solid var(--light-grey);
+    border-top: 0;
+  }
+  
+  .suggestion {
+    padding: 8px 0px 8px 44px;
+    cursor: pointer;
+  }
+  
+  .suggestion:first-child {
+    padding-top: 8px;
+  }
+  
+  .suggeestion:last-child {
+    padding-bottom: 8px;
+  }
