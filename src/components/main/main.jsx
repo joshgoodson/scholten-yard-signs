@@ -11,10 +11,9 @@ export class Main extends React.Component {
     };
 
     this.searchForNearestPickup = function (location) {
-      console.log(
-        "Calling searchForNeearestPickup: " + JSON.stringify(location)
-      );
-      // To Do: Make Google Maps call to get results and replace PICKUP_LOCATIONS below
+    //   console.log(
+    //     "Calling searchForNeearestPickup: " + JSON.stringify(location)
+    //   );
 
       var origin = new google.maps.LatLng(
         location[0].geometry.location.lat(),
@@ -25,12 +24,14 @@ export class Main extends React.Component {
 
       var pickup_by_distance = [];
 
-      this.setState({
-        results: pickup_by_distance,
-      }, () => {
-        PICKUP_LOCATIONS.forEach(function (pickup) {
-            console.log("pickup: " + JSON.stringify(pickup));
-    
+      this.setState(
+        {
+          results: pickup_by_distance,
+        },
+        () => {
+          PICKUP_LOCATIONS.forEach(function (pickup) {
+            // console.log("pickup: " + JSON.stringify(pickup));
+
             var destination = new google.maps.LatLng(
               pickup.latitude,
               pickup.longitude
@@ -44,25 +45,22 @@ export class Main extends React.Component {
                 avoidTolls: false,
               },
               function callback(response, status) {
-                console.log("Distance: " + JSON.stringify(response));
+                // console.log("Distance: " + JSON.stringify(response));
                 var results = response.rows[0].elements;
-    
+
                 pickup_by_distance.push({
                   ...pickup,
                   results,
                 });
-    
-                console.log("Final Array: " + JSON.stringify(pickup_by_distance));
+
+                // console.log(
+                //   "Final Array: " + JSON.stringify(pickup_by_distance)
+                // );
               }
             );
           });
-      });
-
-    //   function callback(response, status) {
-    //     console.log("Distance: " + JSON.stringify(response));
-    //     // See Parsing the Results for
-    //     // the basics of a callback function.
-    //   }
+        }
+      );
     };
   }
 
