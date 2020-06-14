@@ -7,8 +7,8 @@ const PICKUP_LOCATIONS = [
     state_code: "IA",
     zip: "50401",
     dates_hours: "1:00 PM - 3:00 PM",
-    latitude: null,
-    longitude: null,
+    latitude: 43.148570,
+    longitude: -93.141733,
     signs: 100
   },
   {
@@ -19,8 +19,8 @@ const PICKUP_LOCATIONS = [
     state_code: "IA",
     zip: "51639",
     dates_hours: "3:00 PM - 5:00 PM",
-    latitude: null,
-    longitude: null,
+    latitude: 40.728748,
+    longitude: -95.460029,
     signs: 100
   },
   {
@@ -31,8 +31,8 @@ const PICKUP_LOCATIONS = [
     state_code: "IA",
     zip: "52722",
     dates_hours: "1:00 PM - 3:00 PM",
-    latitude: null,
-    longitude: null,
+    latitude: 41.562796,
+    longitude: -90.487070,
     signs: 100
   },
   {
@@ -43,8 +43,8 @@ const PICKUP_LOCATIONS = [
     state_code: "IA",
     zip: "51333",
     dates_hours: "1:00 PM - 3:00 PM",
-    latitude: null,
-    longitude: null,
+    latitude: 43.097185,
+    longitude: -95.030741,
     signs: 100
   },
 ];
