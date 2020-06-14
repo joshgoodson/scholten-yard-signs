@@ -11,6 +11,7 @@ export class Main extends React.Component {
       results: null,
     };
 
+<<<<<<< HEAD
     this.searchForNearestPickup = async function (location) {
       // this.setState({
       //   results: PICKUP_LOCATIONS,
@@ -20,6 +21,12 @@ export class Main extends React.Component {
         "Calling searchForNearestPickup: " + JSON.stringify(location)
       );
       // To Do: Make Google Maps call to get results and replace PICKUP_LOCATIONS below
+=======
+    this.searchForNearestPickup = function (location) {
+    //   console.log(
+    //     "Calling searchForNeearestPickup: " + JSON.stringify(location)
+    //   );
+>>>>>>> formatting
 
       var origin = new google.maps.LatLng(
         location[0].geometry.location.lat(),
@@ -30,6 +37,7 @@ export class Main extends React.Component {
 
       var pickup_by_distance = [];
 
+<<<<<<< HEAD
       for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
         const pickup = PICKUP_LOCATIONS[i];
         console.log("pickup: " + JSON.stringify(pickup));
@@ -45,21 +53,53 @@ export class Main extends React.Component {
             service.getDistanceMatrix(data, (response, status) => {
               if (status === "OK") {
                 console.log("Distance: " + JSON.stringify(response));
+=======
+      this.setState(
+        {
+          results: pickup_by_distance,
+        },
+        () => {
+          PICKUP_LOCATIONS.forEach(function (pickup) {
+            // console.log("pickup: " + JSON.stringify(pickup));
+
+            var destination = new google.maps.LatLng(
+              pickup.latitude,
+              pickup.longitude
+            );
+            service.getDistanceMatrix(
+              {
+                origins: [origin],
+                destinations: [destination],
+                travelMode: "DRIVING",
+                avoidHighways: false,
+                avoidTolls: false,
+              },
+              function callback(response, status) {
+                // console.log("Distance: " + JSON.stringify(response));
+>>>>>>> formatting
                 var results = response.rows[0].elements;
 
                 pickup_by_distance.push({
                   ...pickup,
                   results,
                 });
+<<<<<<< HEAD
                 console.log(
                   "pickup after return: " + JSON.stringify(pickup_by_distance)
                 );
                 resolve(response);
               } else {
                 reject(response);
+=======
+
+                // console.log(
+                //   "Final Array: " + JSON.stringify(pickup_by_distance)
+                // );
+>>>>>>> formatting
               }
             });
           });
+<<<<<<< HEAD
 
         const result = await getDistanceMatrix(
           service, 
@@ -116,6 +156,10 @@ export class Main extends React.Component {
       this.setState({
         results: pickup_by_distance,
       });
+=======
+        }
+      );
+>>>>>>> formatting
     };
   }
 
