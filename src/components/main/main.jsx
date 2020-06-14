@@ -11,7 +11,7 @@ export class Main extends React.Component {
       results: null,
     };
 
-    this.searchForNearestPickup = function (location) {
+    this.searchForNearestPickup = async function (location) {
       // this.setState({
       //   results: PICKUP_LOCATIONS,
       // });
@@ -30,27 +30,20 @@ export class Main extends React.Component {
 
       var pickup_by_distance = [];
 
-      this.setState(
-        {
-          results: pickup_by_distance,
-        },
-        () => {
-          PICKUP_LOCATIONS.forEach(function (pickup) {
-            console.log("pickup: " + JSON.stringify(pickup));
+      for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
+        const pickup = PICKUP_LOCATIONS[i];
+        console.log("pickup: " + JSON.stringify(pickup));
+        console.log("pickupByDistance: " + JSON.stringify(pickup_by_distance));
 
-            var destination = new google.maps.LatLng(
-              pickup.latitude,
-              pickup.longitude
-            );
-            service.getDistanceMatrix(
-              {
-                origins: [origin],
-                destinations: [destination],
-                travelMode: "DRIVING",
-                avoidHighways: false,
-                avoidTolls: false,
-              },
-              function callback(response, status) {
+        var destination = new google.maps.LatLng(
+          pickup.latitude,
+          pickup.longitude
+        );
+
+        const getDistanceMatrix = (service, data) =>
+          new Promise((resolve, reject) => {
+            service.getDistanceMatrix(data, (response, status) => {
+              if (status === "OK") {
                 console.log("Distance: " + JSON.stringify(response));
                 var results = response.rows[0].elements;
 
@@ -58,15 +51,71 @@ export class Main extends React.Component {
                   ...pickup,
                   results,
                 });
-
                 console.log(
-                  "Final Array: " + JSON.stringify(pickup_by_distance)
+                  "pickup after return: " + JSON.stringify(pickup_by_distance)
                 );
+                resolve(response);
+              } else {
+                reject(response);
               }
-            );
+            });
           });
-        }
-      );
+
+        const result = await getDistanceMatrix(
+          service, 
+          {
+            origins: [origin],
+            destinations: [destination],
+            travelMode: "DRIVING",
+            avoidHighways: false,
+            avoidTolls: false,
+          },
+          function callback(response, status) {
+            console.log("Distance: " + JSON.stringify(response));
+            var results = response.rows[0].elements;
+
+            pickup_by_distance.push({
+              ...pickup,
+              results,
+            });
+            console.log(
+              "pickup after return: " + JSON.stringify(pickup_by_distance)
+            );
+          }
+        );
+      }
+      // PICKUP_LOCATIONS.forEach(function (pickup) {
+      //   console.log("pickup: " + JSON.stringify(pickup));
+
+      //   var destination = new google.maps.LatLng(
+      //     pickup.latitude,
+      //     pickup.longitude
+      //   );
+      //   service.getDistanceMatrix(
+      //     {
+      //       origins: [origin],
+      //       destinations: [destination],
+      //       travelMode: "DRIVING",
+      //       avoidHighways: false,
+      //       avoidTolls: false,
+      //     },
+      //     function callback(response, status) {
+      //       console.log("Distance: " + JSON.stringify(response));
+      //       var results = response.rows[0].elements;
+
+      //       pickup_by_distance.push({
+      //         ...pickup,
+      //         results,
+      //       });
+      //     }
+      //   );
+      // });
+
+      console.log("Final Array: " + JSON.stringify(pickup_by_distance));
+
+      this.setState({
+        results: pickup_by_distance,
+      });
     };
   }
 
