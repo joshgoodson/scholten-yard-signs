@@ -1,0 +1,49 @@
+ /* ------ MAP RESETS ------- */
+ /* The !important is necessary here to override inline styles applied by google maps that cannot be undone or restructured*/
+.gm-style .gm-style-iw {
+    display: block !important;
+    padding: 16px !important;
+    top: -45px !important;
+    left: 0 !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+    top: -45px !important;
+}
+
+ /*style the p tag*/
+.gm-style .gm-style-iw #google-popup p{
+    padding: 10px;
+}
+ 
+/*style the arrow*/
+.gm-style div div div div div div div div {
+    top: -20px;
+}
+
+.gm-style .gm-style-iw .gm-style-iw-d {
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+
+ /* ------ INFO WINDOW ------- */
+.infowindow__address {
+    margin: 0;
+
+    color: var(--scholten-navy);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.infowindow__address:hover {
+    text-decoration: underline;
+}
+
+.infowindow__hours {
+    margin-bottom: 0;
+    
+    color: var(--light-grey);
+    font-size: 16px;
+    font-weight: 400;
+}
