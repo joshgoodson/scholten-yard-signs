@@ -1,6 +1,6 @@
 import React from 'react'
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import { ReactComponent as SearchIcon } from '../../img/search.svg';
+import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+import { ReactComponent as SearchIcon } from 'img/search.svg';
 import './searchbox.css'
 
 function SearchBox(props){
@@ -10,8 +10,9 @@ function SearchBox(props){
         setAddress(value);
         const results = await geocodeByAddress(value);
         props.searchForNearestPickup(results)
+        document.getElementsByClassName('suggestions-container')[0].classList.remove('active')
     };
-  
+
     return (
         <div>
             <PlacesAutocomplete
@@ -21,18 +22,14 @@ function SearchBox(props){
             >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
                 <div>
-                    <div className="searchbox">
+                    <div className={`searchbox ${suggestions.length > 0 ? "active-suggestions" : ""}`}>
                         <SearchIcon className="searchbox__icon" />
-                        <input className="searchbox__input" {...getInputProps({ placeholder: "Enter full address" })} />
+                        <input className="searchbox__input" {...getInputProps({ placeholder: "Enter your full address" })} />
                     </div>
-                    <div className="suggestions-container">
-                        {suggestions.map(suggestion => {
-                            const style = {
-                                backgroundColor: suggestion.active ? "#f5f5f5" : "#fff"
-                            };
-            
+                    <div className={`suggestions-container ${suggestions.length > 0 ? "active" : "" } ${props.hasResults ? 'suggestions-container--with-results' : ""}`}>
+                        { suggestions.map(suggestion => {
                             return (
-                                <div className="suggestion" {...getSuggestionItemProps(suggestion, { style })}>
+                                <div className={`suggestion ${suggestion.active ? "active" : ""}`} {...getSuggestionItemProps(suggestion)}>
                                 {suggestion.description}
                                 </div>
                             );

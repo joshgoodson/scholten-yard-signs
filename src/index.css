@@ -1,3 +1,5 @@
+ /* ------ GLOBAL STYLES AND RESETS ------- */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +7,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --light-grey: rgba(32,33,36,0.28);
-  --dark-grey: #737374;
+  --almost-black: rgba(32,33,36, .87);
+  --light-grey: #737374;
+  --lightest-grey: #C0C0C1;
+  --scholten-navy: #093254;
+  --scholten-navy--lighter: #3C6587;
+  --scholten-powder-blue: rgb(165, 207, 237);
+  --scholten-red: #ec1c2d;
+  --scholten-red--darker: #641F1B;
+  --transition-time: .3s;
 }
 
 code {
@@ -21,9 +30,7 @@ html {
   box-sizing: inherit;
 }
 
-/* ------ HOME PAGE ------- */
 .title {
   font-family: 'Roboto Condensed', sans-serif;
-  text-transform: uppercase;
   text-align: center;
 }

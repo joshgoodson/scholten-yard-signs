@@ -3,24 +3,35 @@
     display: flex;
     justify-content: flex-start;
   
-    max-width: 450px;
+    max-width: 500px;
+    background-color: white;
   
-    margin: 20px auto 0 auto;
+    margin: 30px auto 0 auto;
     padding: 8px;
     border: 1px solid var(--light-grey);
-    border-radius: 2px;
+    border-radius: 25px;
+  }
+
+  .content__container--with-results .searchbox {
+    max-width: 100%;
+    margin: 0 30px;
+  }
+
+  .searchbox.active-suggestions {
+    border-radius: 25px 25px 0px 0px ;
   }
   
   .searchbox:hover, .searchbox:active, .searchbox:focus {
-    box-shadow: 0 1px 6px 0 var(--light-grey);
+    box-shadow: 0 1px 6px 0 var(--almost-black);
   }
   
   .searchbox__input {
     width: 100%;
     margin-left: 4px;
     border: 0;
-  
-    font-size: 16px;
+    
+    font-size: 18px;
+    color: var(--almost-black);
   }
   
   .searchbox__input:focus, .searchbox__input:active {
@@ -29,34 +40,58 @@
   }
   
   .searchbox__icon {
-    height: 28px;
+    height: 36px;
     width: auto;
     padding: 4px;
   
-    fill: var(--light-grey);
+    fill: var(--almost-black);
     cursor: pointer;
   }
   
-  
   /* ------- AUTOCOMPLETE ---------- */
   .suggestions-container {
-    max-width: 450px;
+    max-width: 500px;
     margin: 0px auto 0px auto;
+    border: 1px solid transparent;
+    border-top: 0;
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 0 4px 6px 0 var(--almost-black);
+  }
+
+  .suggestions-container.suggestions-container--with-results {
+    position: absolute;
+    width: calc( 100% - 60px);
+    max-width: unset; /*Some of these styles are resets for the styles applied by google*/
+    margin: 0 30px;
+    z-index: 999;
+  }
   
-    box-shadow: 0 4px 6px 0 var(--light-grey);
-    border: 1px solid var(--light-grey);
+  .suggestions-container.active {
+    border: 1px solid var(--almost-black);
     border-top: 0;
   }
   
   .suggestion {
-    padding: 8px 0px 8px 44px;
+    padding: 10px 0px 10px 44px;
+    
     cursor: pointer;
+    background-color: #fff;
+
+    color: var(--almost-black);
+    font-size: 18px;
+    text-transform: none;
+    text-align: left;
+  }
+
+  .suggestion.active {
+    background-color: #f5f5f5;
   }
   
   .suggestion:first-child {
-    padding-top: 8px;
+    padding-top: 10px;
   }
   
-  .suggeestion:last-child {
-    padding-bottom: 8px;
+  .suggestion:last-child {
+    padding-bottom: 10px;
+    border-radius: 0px 0px 25px 25px;
   }

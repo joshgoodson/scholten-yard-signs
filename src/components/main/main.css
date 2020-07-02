@@ -1,0 +1,73 @@
+ /* ------ HOME PAGE ------- */
+.main__container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    background: 
+        linear-gradient(
+            rgba(9, 50, 84, 0.70), 
+            rgba(9, 50, 84, 0.70)
+        ),
+        url("../../img/background-image.jpg");
+    background-size: cover;
+}
+
+.content__container {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    padding-top: 30vh;
+    
+    transition: all ease-in var(--transition-time);
+}
+
+.content__container.content__container--with-results {
+    height: 100vh;
+    
+    padding-top: 0px;
+    
+    transition: all ease-in var(--transition-time);
+}
+
+.content__container h1 {
+    max-height: 500px;
+    opacity: 1;
+    
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: all ease-in var(--transition-time);
+}
+.content__container.content__container--with-results h1{
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+
+    transition: all ease-in var(--transition-time);
+}
+
+.content__container h2 {
+    max-height: 500px;
+    opacity: 1;
+    margin: 30px;
+    
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+
+    transition: all ease-in var(--transition-time);
+}
+
+.content__container.content__container--with-results h2{
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    
+    transition: all ease-in var(--transition-time);
+}
+
