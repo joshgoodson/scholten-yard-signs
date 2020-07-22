@@ -13,11 +13,7 @@ export class Main extends React.Component{
 
 
         this.searchForNearestPickup = async function (location) {
-            // console.log(
-            //   "Calling searchForNearestPickup: " + JSON.stringify(location)
-            // );
-            // To Do: Make Google Maps call to get results and replace PICKUP_LOCATIONS below
-      
+    
             var origin = new google.maps.LatLng(
               location[0].geometry.location.lat(),
               location[0].geometry.location.lng()
@@ -29,8 +25,6 @@ export class Main extends React.Component{
       
             for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
               const pickup = PICKUP_LOCATIONS[i];
-            //   console.log("pickup: " + JSON.stringify(pickup));
-            //   console.log("pickupByDistance: " + JSON.stringify(pickup_by_distance));
       
               var destination = new google.maps.LatLng(
                 pickup.latitude,
@@ -41,17 +35,13 @@ export class Main extends React.Component{
                 new Promise((resolve, reject) => {
                   service.getDistanceMatrix(data, (response, status) => {
                     if (status === "OK") {
-                    //   console.log("Distance: " + JSON.stringify(response));
                       var results = response.rows[0].elements;
       
                       let pickup_to_merge = pickup;
-                      pickup_to_merge.distance = results[0].distance.value;
+                      pickup_to_merge.distance = Math.round(results[0].distance.value / 1609);
                       pickup_by_distance.push({
                         ...pickup_to_merge,
                       });
-                    //   console.log(
-                    //     "pickup after return: " + JSON.stringify(pickup_by_distance)
-                    //   );
                       resolve(response);
                     } else {
                       reject(response);
