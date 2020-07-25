@@ -8,8 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        REACT_APP_GOOGLE_API: REPLACE_ME_WITH_GOOGLE_API_KEY
     stdin_open: true
     volumes:
       - ".:/usr/app"
