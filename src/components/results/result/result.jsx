@@ -19,6 +19,7 @@ const Result = (props) => {
                 <p className="location location__hours">{props.result.dates_hours}</p>
                 <a className="directions-button" 
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={`https://www.google.com/maps/dir/?api=1&destination=${
                         encodeURIComponent(`${props.result.address} ${props.result.city} ${props.result.state_code} ${props.result.zip}`)}`
                     }

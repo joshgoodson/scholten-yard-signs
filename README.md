@@ -1,3 +1,18 @@
+# scholten yard signs app
+
+## Deploying app with docker compose
+
+The Makefile has all the command needed to build, package and run a production build of the app. It also includes development commands to
+develop in docker agnostic of any single machine.
+
+`make help` will describe the available commands to use.
+
+`make service` will build and run the development app. Availale at `http://localhost:3001`
+
+`make run` will package and run the production nginx build of the app. Available at `http://localhost:8080`
+
+In order to deploy this with a Google API key, you must run the make commands with the REACT_APP_GOOGLE_API env with it supplying the actual API key value.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

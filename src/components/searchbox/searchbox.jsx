@@ -19,6 +19,7 @@ function SearchBox(props){
                 value={address}
                 onChange={setAddress}
                 onSelect={handleSelect}
+                googleCallbackName="initGoogleApi"
             >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
                 <div>

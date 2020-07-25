@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  scholten:
+    container_name: ${PROJECT_NAME}
+    hostname: ${PROJECT_NAME}
+    image: ${IMAGE_NAME}:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      args:
+        REACT_APP_GOOGLE_API: REPLACE_ME_WITH_GOOGLE_API_KEY
+    ports:
+      - 8080:80
