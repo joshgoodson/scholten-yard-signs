@@ -6,7 +6,7 @@ const PICKUP_LOCATIONS = [
     city: "Sioux City",
     state_code: "IA",
     zip: "51103",
-    dates_hours: "4:00 PM - 7:00 PM",
+    dates_hours: "August 10 4:00 PM - 7:00 PM",
     latitude: 42.4988307,
     longitude: -96.4160184,
     signs: 3000,
