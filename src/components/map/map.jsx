@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Map, InfoWindow, Marker } from 'google-maps-react';
 import './map.css'
 
 const mapStyles = {
@@ -15,6 +15,7 @@ const containerStyles = {
 
 export class MapContainer extends React.Component {
     adjustMap = (mapProps, map) => {
+      // eslint-disable-next-line
       const {google, markers} = mapProps;
       const bounds = new google.maps.LatLngBounds();
     
@@ -55,6 +56,7 @@ export class MapContainer extends React.Component {
                     <a
                       className="infowindow__address"
                       target="_blank"
+                      rel="noopener noreferrer"
                       href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${result.address} ${result.city} ${result.state_code} ${result.zip}`)}`}
                     > 
                       <p>
@@ -72,6 +74,4 @@ export class MapContainer extends React.Component {
     }
 }
 
-export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_API
-})(MapContainer);
+export default MapContainer;

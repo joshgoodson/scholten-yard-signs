@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  scholten:
+    container_name: ${PROJECT_NAME}
+    hostname: ${PROJECT_NAME}
+    image: ${IMAGE_NAME}:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    volumes:
+      - ".:/usr/app"
+      - "/usr/app/node_modules"
+    ports:
+      - 3001:3000
