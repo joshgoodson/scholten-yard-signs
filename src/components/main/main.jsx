@@ -1,4 +1,5 @@
 import React from 'react'
+import { GoogleApiWrapper } from 'google-maps-react';
 import SearchBox from '../searchbox/searchbox'
 import Results from '../results/results'
 import PICKUP_LOCATIONS from '../../constants/ysPickupLocations'
@@ -14,19 +15,19 @@ export class Main extends React.Component{
 
         this.searchForNearestPickup = async function (location) {
     
-            var origin = new google.maps.LatLng(
+            var origin = this.props.google.maps.LatLng(
               location[0].geometry.location.lat(),
               location[0].geometry.location.lng()
             );
       
-            var service = new google.maps.DistanceMatrixService();
+            var service = this.props.google.maps.DistanceMatrixService();
       
             var pickup_by_distance = [];
       
             for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
               const pickup = PICKUP_LOCATIONS[i];
       
-              var destination = new google.maps.LatLng(
+              var destination = this.props.google.maps.LatLng(
                 pickup.latitude,
                 pickup.longitude
               );
@@ -49,7 +50,7 @@ export class Main extends React.Component{
                   });
                 });
       
-              const result = await getDistanceMatrix(
+              await getDistanceMatrix(
                 service,
                 {
                   origins: [origin],
@@ -57,7 +58,7 @@ export class Main extends React.Component{
                   travelMode: "DRIVING",
                   avoidHighways: false,
                   avoidTolls: false,
-                  unitSystem: google.maps.UnitSystem.IMPERIAL,
+                  unitSystem: this.props.google.maps.UnitSystem.IMPERIAL,
                 }
               );
             }
@@ -84,4 +85,6 @@ export class Main extends React.Component{
     }
 }
 
-export default Main
+export default GoogleApiWrapper({
+  apiKey: (process.env.REACT_APP_GOOGLE_API)
+})(Main)
