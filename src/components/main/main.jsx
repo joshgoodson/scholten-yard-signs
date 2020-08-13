@@ -15,19 +15,19 @@ export class Main extends React.Component{
 
         this.searchForNearestPickup = async function (location) {
     
-            var origin = this.props.google.maps.LatLng(
+            var origin = new this.props.google.maps.LatLng(
               location[0].geometry.location.lat(),
               location[0].geometry.location.lng()
             );
       
-            var service = this.props.google.maps.DistanceMatrixService();
+            var service = new this.props.google.maps.DistanceMatrixService();
       
             var pickup_by_distance = [];
       
             for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
               const pickup = PICKUP_LOCATIONS[i];
       
-              var destination = this.props.google.maps.LatLng(
+              var destination = new this.props.google.maps.LatLng(
                 pickup.latitude,
                 pickup.longitude
               );
