@@ -73,6 +73,9 @@ repackage: check-env
 run: package
 	docker-compose -f docker-compose.prod.yml -p $(PROJECT_NAME) up -d $(PROJECT_NAME)
 
+attach-nginx: run
+	docker exec -it $(PROJECT_NAME) sh
+
 clean:
 	@docker-compose -p $(PROJECT_NAME) down --remove-orphans --rmi all 2>/dev/null \
 	&& echo 'Image(s) for "$(IMAGE_NAME):$(IMAGE_TAG)" removed.' \
