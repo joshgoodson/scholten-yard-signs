@@ -1,4 +1,5 @@
 import React from 'react'
+import { GoogleApiWrapper } from 'google-maps-react';
 import SearchBox from '../searchbox/searchbox'
 import Results from '../results/results'
 import PICKUP_LOCATIONS from '../../constants/ysPickupLocations'
@@ -7,10 +8,10 @@ import './main.css'
 export class Main extends React.Component{
     constructor(props) {
         super(props);
+        const { google } = props;
         this.state = {
             results: null
         };
-
 
         this.searchForNearestPickup = async function (location) {
     
@@ -49,7 +50,7 @@ export class Main extends React.Component{
                   });
                 });
       
-              const result = await getDistanceMatrix(
+              await getDistanceMatrix(
                 service,
                 {
                   origins: [origin],
@@ -84,4 +85,6 @@ export class Main extends React.Component{
     }
 }
 
-export default Main
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_API
+})(Main)

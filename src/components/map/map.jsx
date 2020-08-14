@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, InfoWindow, Marker } from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import './map.css'
 
 const mapStyles = {
@@ -15,8 +15,7 @@ const containerStyles = {
 
 export class MapContainer extends React.Component {
     adjustMap = (mapProps, map) => {
-      // eslint-disable-next-line
-      const {google, markers} = mapProps;
+      const { google } = mapProps;
       const bounds = new google.maps.LatLngBounds();
     
       this.props.results.forEach(marker => {
@@ -74,4 +73,6 @@ export class MapContainer extends React.Component {
     }
 }
 
-export default MapContainer;
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_API
+})(MapContainer)
