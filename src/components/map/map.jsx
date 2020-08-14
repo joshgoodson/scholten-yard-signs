@@ -15,12 +15,11 @@ const containerStyles = {
 
 export class MapContainer extends React.Component {
     adjustMap = (mapProps, map) => {
-      // eslint-disable-next-line
-      const {google, markers} = mapProps;
-      const bounds = new this.props.google.maps.LatLngBounds();
+      const { google } = mapProps;
+      const bounds = new google.maps.LatLngBounds();
     
       this.props.results.forEach(marker => {
-        bounds.extend(new this.props.google.maps.LatLng(marker.latitude, marker.longitude));
+        bounds.extend(new google.maps.LatLng(marker.latitude, marker.longitude));
       });
     
       map.fitBounds(bounds);

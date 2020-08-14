@@ -8,26 +8,26 @@ import './main.css'
 export class Main extends React.Component{
     constructor(props) {
         super(props);
+        const { google } = props;
         this.state = {
             results: null
         };
 
-
         this.searchForNearestPickup = async function (location) {
     
-            var origin = new this.props.google.maps.LatLng(
+            var origin = new google.maps.LatLng(
               location[0].geometry.location.lat(),
               location[0].geometry.location.lng()
             );
       
-            var service = new this.props.google.maps.DistanceMatrixService();
+            var service = new google.maps.DistanceMatrixService();
       
             var pickup_by_distance = [];
       
             for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
               const pickup = PICKUP_LOCATIONS[i];
       
-              var destination = new this.props.google.maps.LatLng(
+              var destination = new google.maps.LatLng(
                 pickup.latitude,
                 pickup.longitude
               );
@@ -58,7 +58,7 @@ export class Main extends React.Component{
                   travelMode: "DRIVING",
                   avoidHighways: false,
                   avoidTolls: false,
-                  unitSystem: this.props.google.maps.UnitSystem.IMPERIAL,
+                  unitSystem: google.maps.UnitSystem.IMPERIAL,
                 }
               );
             }
