@@ -77,7 +77,7 @@ attach-nginx: run
 	docker exec -it $(PROJECT_NAME) sh
 
 validate:
-	docker run --rm -t -a stdout -v ${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro -v ${PWD}/default.conf:/etc/nginx/conf.d/default.conf:ro --entrypoint nginx nginx:stable-alpine -c /etc/nginx/nginx.conf -t
+	docker run --rm -t -a stdout -v ${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro -v ${PWD}/default.conf:/etc/nginx/conf.d/default.conf:ro -v ${PWD}/keys:/etc/letsencrypt/live/yardsign.scholten4iowa.com/:ro  --entrypoint nginx nginx:stable-alpine -c /etc/nginx/nginx.conf -t
 
 clean:
 	@docker-compose -p $(PROJECT_NAME) down --remove-orphans --rmi all 2>/dev/null \
