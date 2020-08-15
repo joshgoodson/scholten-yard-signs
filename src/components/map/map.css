@@ -47,3 +47,19 @@
     font-size: 16px;
     font-weight: 400;
 }
+
+
+ /* ------ MOBILE ------- */
+@media screen and (max-width: 992px) {
+    .infowindow__address, .location__remaining-signs {
+        font-size: 12px;
+    }
+
+    .infowindow__address p{
+        margin: 0px;
+    }
+
+    .infowindow__hours {
+        display: none;
+    }
+}

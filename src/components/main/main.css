@@ -39,6 +39,7 @@
     font-size: 60px;
     text-align: center;
     text-transform: uppercase;
+    margin: 40px 20px;
 
     transition: all ease-in var(--transition-time);
 }
@@ -71,3 +72,14 @@
     transition: all ease-in var(--transition-time);
 }
 
+ /* ------ MOBILE ------- */
+ @media screen and (max-width: 992px) {
+    .content__container {
+        padding-top: 20vh;
+        overflow: hidden;
+    }
+
+    .content__container h1 {
+      font-size: 40px;
+    }
+}

@@ -1,4 +1,7 @@
 /* ------- SEARCH BOX ---------- */
+.searchbox__container {
+  margin: 0px 20px;
+}
 .searchbox {
     display: flex;
     justify-content: flex-start;
@@ -95,3 +98,8 @@
     padding-bottom: 10px;
     border-radius: 0px 0px 25px 25px;
   }
+
+/* ------ MOBILE ------- */
+@media screen and (max-width: 992px) {
+
+}

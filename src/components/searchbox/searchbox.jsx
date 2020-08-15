@@ -22,7 +22,7 @@ function SearchBox(props){
                 googleCallbackName="initGoogleApi"
             >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
-                <div>
+                <div className="searchbox__container">
                     <div className={`searchbox ${suggestions.length > 0 ? "active-suggestions" : ""}`}>
                         <SearchIcon className="searchbox__icon" />
                         <input className="searchbox__input" {...getInputProps({ placeholder: "Enter your full address" })} />

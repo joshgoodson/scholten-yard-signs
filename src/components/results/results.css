@@ -167,3 +167,23 @@
     fill: white;
     transition: all ease-out var( --transition-time);
 }
+
+@media screen and (max-width: 992px) {
+    .results__container {
+        flex-wrap: wrap;
+        overflow: scroll;
+    }
+
+    .results__list {
+        order: 2;
+        min-width: 100%;
+    }
+
+    .results__container > div:nth-child(2) {
+        min-width: 100%;
+        height: 250px;
+    }
+
+
+
+}
