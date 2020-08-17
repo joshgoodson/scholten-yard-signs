@@ -23,7 +23,6 @@ export class MapContainer extends React.Component {
       });
 
       if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
-        debugger
         var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.005, bounds.getNorthEast().lng() + 0.005);
         var extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - 0.005, bounds.getNorthEast().lng() - 0.005);
         bounds.extend(extendPoint1);
