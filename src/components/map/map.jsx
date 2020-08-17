@@ -21,7 +21,15 @@ export class MapContainer extends React.Component {
       this.props.results.forEach(marker => {
         bounds.extend(new google.maps.LatLng(marker.latitude, marker.longitude));
       });
-    
+
+      if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+        debugger
+        var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.005, bounds.getNorthEast().lng() + 0.005);
+        var extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - 0.005, bounds.getNorthEast().lng() - 0.005);
+        bounds.extend(extendPoint1);
+        bounds.extend(extendPoint2);
+     }
+
       map.fitBounds(bounds);
     };
 
@@ -29,10 +37,12 @@ export class MapContainer extends React.Component {
         return (
             <Map
               google={this.props.google}
-              zoom={14}
               onReady={this.adjustMap}
+              zoom={14}
               style={mapStyles}
               containerStyle={containerStyles}
+              streetViewControl={false}
+              mapTypeControl={false}
               yesIWantToUseGoogleMapApiInternals
             >
             { this.props.results.map((result) => {
@@ -45,8 +55,9 @@ export class MapContainer extends React.Component {
                         selectedPlace={this.props.selectedPlace}
                       />
             })}
-            { this.props.results.map((result) => {
+            { this.props.results.map((result, index) => {
                 return <InfoWindow
+                  key={index}
                   visible={this.props.selectedPlace === result}
                   position={{lat: result.latitude, lng: result.longitude}} 
                 >
