@@ -28,10 +28,10 @@ function SearchBox(props){
                         <input className="searchbox__input" {...getInputProps({ placeholder: "Enter your full address" })} />
                     </div>
                     <div className={`suggestions-container ${suggestions.length > 0 ? "active" : "" } ${props.hasResults ? 'suggestions-container--with-results' : ""}`}>
-                        { suggestions.map(suggestion => {
+                        { suggestions.map((suggestion, index) => {
                             return (
-                                <div className={`suggestion ${suggestion.active ? "active" : ""}`} {...getSuggestionItemProps(suggestion)}>
-                                {suggestion.description}
+                                <div key={index} className={`suggestion ${suggestion.active ? "active" : ""}`} {...getSuggestionItemProps(suggestion)}>
+                                    {suggestion.description}
                                 </div>
                             );
                         })}
