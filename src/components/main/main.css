@@ -77,9 +77,14 @@
     .content__container {
         padding-top: 20vh;
         overflow: hidden;
+        z-index:999;
     }
 
     .content__container h1 {
       font-size: 40px;
+    }
+
+    .content__container.content__container--with-results {
+        height: unset;
     }
 }
