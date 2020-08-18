@@ -53,6 +53,19 @@
     line-height: 1.4;
 }
 
+.results__back_link {
+    margin: 0;
+    padding-bottom: 10px;
+    
+    color: var(--scholten-navy--lighter);
+    
+    cursor: pointer;
+}
+
+.results__back_link:hover {
+    text-decoration: underline;
+}
+
  /* ------ RESULT ------- */
 
 .result {
