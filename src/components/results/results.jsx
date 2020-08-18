@@ -50,6 +50,7 @@ class Results extends React.Component {
                                     resultIsSelected={this.state.selectedPlace === result}
                                 />
                         })}
+                        <p className="results__back_link" onClick={this.props.clearResults}>Back to search</p>
                     </div>
                     <MapsPage results={this.props.results} selectPlace={this.selectPlace} selectedPlace={this.state.selectedPlace}/>
                 </div>
