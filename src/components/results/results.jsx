@@ -8,13 +8,13 @@ class Results extends React.Component {
         super(props);
         this.selectPlace = this.selectPlace.bind(this);
         this.state = {
-            selectedPlace: {}
+            selectedPlace: null
         };
     }
 
     componentDidUpdate() {
         // if selected component is out view in list, scroll to it. 
-        if (this.state.selectedPlace != null) {
+        if (this.state.selectedPlace != null && this.state.selectedPlace != {}) {
             const selectedResult = document.getElementById(this.state.selectedPlace.location_id)
             if (this.state.selectedResult === this.props.results[0]) {
                 selectedResult.parentElement.scrollTo(0)
@@ -25,7 +25,11 @@ class Results extends React.Component {
     }
 
     selectPlace = (place) => {
-        this.setState({ selectedPlace: place })
+        if (place != this.state.selectedPlace) {
+            this.setState({ selectedPlace: place })
+        } else {
+            this.setState({selectedPlace: null})
+        }
     }
 
     render() {
@@ -46,6 +50,7 @@ class Results extends React.Component {
                                     resultIsSelected={this.state.selectedPlace === result}
                                 />
                         })}
+                        <p className="results__back_link" onClick={this.props.clearResults}>Back to search</p>
                     </div>
                     <MapsPage results={this.props.results} selectPlace={this.selectPlace} selectedPlace={this.state.selectedPlace}/>
                 </div>

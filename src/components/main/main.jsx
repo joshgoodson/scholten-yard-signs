@@ -78,7 +78,7 @@ export class Main extends React.Component{
                     <h1>Show Your Support for <br/>J.D. Scholten</h1>
                     <h2>Find the nearest location to pickup a yard sign.</h2>
                     <SearchBox searchForNearestPickup={(i) => this.searchForNearestPickup(i)} hasResults={this.state.results != null}/>
-                    <Results results={this.state.results}/>
+                    <Results results={this.state.results} clearResults={() => this.setState({results: null})}/>
                 </div>
             </div>
         )
