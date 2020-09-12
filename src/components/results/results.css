@@ -14,6 +14,7 @@
 
 .results__container div {
     flex: 1;
+    flex-wrap: wrap;
 }
 
 .results__header-wrapper {
@@ -124,6 +125,23 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
+}
+
+.result__none-of-the-above {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--scholten-navy);
+}
+
+.result__request-form {
+    margin-top: 12px;
+    color: var(--scholten-navy--lighter);
+    text-decoration: none;
+}
+
+.result__request-form:hover {
+    text-decoration: underline;
 }
 
 .location {
