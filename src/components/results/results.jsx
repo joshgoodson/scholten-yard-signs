@@ -44,12 +44,12 @@ class Results extends React.Component {
                         {this.props.results.map((result, index) => {
                             return <Result
                                     key={index}
-                                    index={index}
                                     result={result}
                                     onClick={i => this.selectPlace(result)}
                                     resultIsSelected={this.state.selectedPlace === result}
                                 />
                         })}
+                        <Result result={null} onClick={i => this.selectPlace(null)}/>
                         <p className="results__back_link" onClick={this.props.clearResults}>Back to search</p>
                     </div>
                     <MapsPage results={this.props.results} selectPlace={this.selectPlace} selectedPlace={this.state.selectedPlace}/>
