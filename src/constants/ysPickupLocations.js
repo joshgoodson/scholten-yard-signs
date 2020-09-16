@@ -11,6 +11,7 @@ const PICKUP_LOCATIONS = [
     longitude: -92.678893,
     signs: 100,
     distance: .2,
+    phone_number: "(641) 220-6249",
   },
   {
     location_id: 2,
@@ -24,6 +25,7 @@ const PICKUP_LOCATIONS = [
     longitude: -93.799681,
     signs: 100,
     distance: .2,
+    phone_number: "(641) 512-5436",
   },
   {
     location_id: 3,
@@ -37,6 +39,7 @@ const PICKUP_LOCATIONS = [
     longitude: -93.950038,
     signs: 100,
     distance: .2,
+    phone_number: "(641) 909-4606 (text preferred)",
   },
   {
     location_id: 4,
@@ -50,6 +53,7 @@ const PICKUP_LOCATIONS = [
     longitude: -93.615978,
     signs: 100,
     distance: .2,
+    phone_number: "",
   },
   {
     location_id: 5,
@@ -63,6 +67,7 @@ const PICKUP_LOCATIONS = [
     longitude: -95.354287,
     signs: 100,
     distance: .2,
+    phone_number: "(712) 269-9474",
   },
   {
     location_id: 6,
@@ -76,6 +81,7 @@ const PICKUP_LOCATIONS = [
     longitude: -95.337029,
     signs: 100,
     distance: .2,
+    phone_number: "",
   },
   {
     location_id: 7,
@@ -89,6 +95,7 @@ const PICKUP_LOCATIONS = [
     longitude: -95.190630,
     signs: 100,
     distance: .2,
+    phone_number: "(712) 660-3391",
   },
   {
     location_id: 8,
@@ -102,6 +109,7 @@ const PICKUP_LOCATIONS = [
     longitude: -94.783873,
     signs: 100,
     distance: .2,
+    phone_number: "(712) 845-4496",
   },
   {
     location_id: 9,
@@ -115,6 +123,7 @@ const PICKUP_LOCATIONS = [
     longitude: -96.160388,
     signs: 100,
     distance: .2,
+    phone_number: "",
   },
   {
     location_id: 10,
@@ -128,6 +137,7 @@ const PICKUP_LOCATIONS = [
     longitude: -96.403506,
     signs: 100,
     distance: .2,
+    phone_number: "(712) 301-6869",
   },
 ];
 
