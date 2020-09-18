@@ -32,8 +32,22 @@ class Results extends React.Component {
         }
     }
 
+    compareByDistance = (a, b) => {
+        if (a.distance < b.distance) {
+            return -1
+        } else if (a.distance > b.distance) {
+            return 1
+        } else {
+            return 0
+        }
+    }
+
+    sortedResults = () => {
+        return this.props.results?.sort(this.compareByDistance) || null
+    }
+
     render() {
-        if (this.props.results) {
+        if (this.sortedResults()) {
             return (
                 <div className="results__container">
                     <div className="results__list" >

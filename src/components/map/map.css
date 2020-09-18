@@ -40,14 +40,18 @@
     text-decoration: underline;
 }
 
-.infowindow__hours {
-    margin-bottom: 0;
+.infowindow__hours,
+.infowindow__name {
+    margin: 0;
     
     color: var(--light-grey);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
+.infowindow__name {
+    margin-bottom: 12px;
+}
 
  /* ------ MOBILE ------- */
 @media screen and (max-width: 992px) {

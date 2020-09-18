@@ -62,9 +62,7 @@ export class Main extends React.Component{
                 }
               );
             }
-      
-            // console.log("Final Array: " + JSON.stringify(pickup_by_distance));
-      
+            
             this.setState({
               results: pickup_by_distance,
             });
