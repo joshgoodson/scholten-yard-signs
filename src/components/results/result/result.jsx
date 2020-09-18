@@ -13,12 +13,25 @@ const Result = (props) => {
                 onClick={props.onClick}
             >
                 <div className="result__content">
-                    <p className="location location__remaining-signs">{props.result.signs} signs remaining</p>
                     <p className="location location__address">
                         {props.result.address}<br/>
                         {props.result.city}, {props.result.state_code} {props.result.zip}
                     </p>
-                    <p className="location location__hours">{props.result.dates_hours}</p>
+
+                    <div className="location location__availability">
+                        <p className="location location__days">{props.result.dates}</p>
+                        <p className="location location__hours">{props.result.hours}</p>
+                    </div>
+
+
+                    <div className="location location__volunteer-contact">
+                        <p className="location__volunteer-contact--title">Volunteer Contact</p>
+                        <p className="location location__volunteer-name">{props.result.location_name}</p>
+                        <p className="location location__volunteer-phone">{props.result.phone_number}</p>
+                    </div>
+
+                    <p className="location location__remaining-signs">{props.result.instructions}</p>
+
                     <a className="directions-button" 
                         target="_blank"
                         rel="noopener noreferrer"

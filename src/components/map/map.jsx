@@ -61,7 +61,6 @@ export class MapContainer extends React.Component {
                   position={{lat: result.latitude, lng: result.longitude}} 
                 >
                   <div>
-                    <p className="location location__remaining-signs">{result.signs} signs remaining</p>
                     <a
                       className="infowindow__address"
                       target="_blank"
@@ -73,7 +72,9 @@ export class MapContainer extends React.Component {
                         {result.city}, {result.state_code} {result.zip}
                       </p>
                     </a>
-                    <p className="infowindow__hours">{result.dates_hours}</p>
+                    <p className="infowindow__name">{result.location_name}</p>
+                    <p className="infowindow__hours">{result.dates}</p>
+                    <p className="infowindow__hours">{result.hours}</p>
 
                   </div>
                 </InfoWindow>
