@@ -190,7 +190,7 @@ const PICKUP_LOCATIONS = [
     signs: 100,
     distance: .2,
     phone_number: "",
-    instructions: "Simply pick up signs which are leaning on the side of Mikki's house - and text Ayshe's number which is posted over the signs"
+    instructions: ""
   },
   {
     location_id: 13,
@@ -206,6 +206,38 @@ const PICKUP_LOCATIONS = [
     signs: 100,
     distance: .2,
     phone_number: "515-525-8900",
+    instructions: "Please contact by text of e-mail. jhardy@mchsi.com, tracysmithus@yahoo.com"
+  },
+  {
+    location_id: 14,
+    location_name: "Tom Salvatores",
+    address: "1053 N 23rd Pl",
+    city: "Fort Dodge",
+    state_code: "IA",
+    zip: "50501",
+    dates: "",
+    hours: "",
+    latitude: 42.061207,
+    longitude: -93.888865,
+    signs: 100,
+    distance: .2,
+    phone_number: "515-570-6010",
+    instructions: ""
+  },
+  {
+    location_id: 15,
+    location_name: "Mark Sturgeon",
+    address: "101 5th St",
+    city: "Le Mars",
+    state_code: "IA",
+    zip: "51031",
+    dates: "",
+    hours: "varied (call, text, or email) bigfish81764@yahoo.com, plymouthcountydems@gmail.com",
+    latitude: 42.061207,
+    longitude: -93.888865,
+    signs: 100,
+    distance: .2,
+    phone_number: "712-540-6637",
     instructions: ""
   },
 ];
