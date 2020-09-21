@@ -190,7 +190,7 @@ const PICKUP_LOCATIONS = [
     signs: 100,
     distance: .2,
     phone_number: "",
-    instructions: "Please contact by text of e-mail. jhardy@mchsi.com, tracysmithus@yahoo.com"
+    instructions: "Please contact by text or e-mail. jhardy@mchsi.com, tracysmithus@yahoo.com"
   },
   {
     location_id: 13,
