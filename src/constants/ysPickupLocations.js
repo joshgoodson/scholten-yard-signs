@@ -190,7 +190,7 @@ const PICKUP_LOCATIONS = [
     signs: 100,
     distance: .2,
     phone_number: "",
-    instructions: ""
+    instructions: "Please contact by text of e-mail. jhardy@mchsi.com, tracysmithus@yahoo.com"
   },
   {
     location_id: 13,
@@ -206,7 +206,7 @@ const PICKUP_LOCATIONS = [
     signs: 100,
     distance: .2,
     phone_number: "515-525-8900",
-    instructions: "Please contact by text of e-mail. jhardy@mchsi.com, tracysmithus@yahoo.com"
+    instructions: ""
   },
   {
     location_id: 14,
@@ -217,8 +217,8 @@ const PICKUP_LOCATIONS = [
     zip: "50501",
     dates: "",
     hours: "",
-    latitude: 42.061207,
-    longitude: -93.888865,
+    latitude: 42.517265,
+    longitude: -94.166194,
     signs: 100,
     distance: .2,
     phone_number: "515-570-6010",
@@ -227,14 +227,14 @@ const PICKUP_LOCATIONS = [
   {
     location_id: 15,
     location_name: "Mark Sturgeon",
-    address: "101 5th St",
+    address: "101 5th St NW",
     city: "Le Mars",
     state_code: "IA",
     zip: "51031",
     dates: "",
     hours: "varied (call, text, or email) bigfish81764@yahoo.com, plymouthcountydems@gmail.com",
-    latitude: 42.061207,
-    longitude: -93.888865,
+    latitude: 42.799079,
+    longitude: -96.167096,
     signs: 100,
     distance: .2,
     phone_number: "712-540-6637",
