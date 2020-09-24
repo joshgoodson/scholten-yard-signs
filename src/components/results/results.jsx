@@ -12,18 +12,6 @@ class Results extends React.Component {
         };
     }
 
-    componentDidUpdate() {
-        // if selected component is out view in list, scroll to it. 
-        if (this.state.selectedPlace != null && this.state.selectedPlace != {}) {
-            const selectedResult = document.getElementById(this.state.selectedPlace.location_id)
-            if (this.state.selectedResult === this.props.results[0]) {
-                selectedResult.parentElement.scrollTo(0)
-            } else if (selectedResult != null) {
-                selectedResult.scrollIntoView(false, {behavior: "smooth"})
-            }
-        }
-    }
-
     selectPlace = (place) => {
         if (place != this.state.selectedPlace) {
             this.setState({ selectedPlace: place })
