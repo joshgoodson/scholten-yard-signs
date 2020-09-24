@@ -237,6 +237,18 @@ const PICKUP_LOCATIONS = [
       "longitude": -94.938804,
       "phone_number": "(712) 435-0697",
       "instructions": "Please text or call ahead"
+  },
+  {
+      "location_id": 21,
+      "location_name": "Sherry Martin",
+      "address": "2315 Summit St",
+      "city": "Sioux City",
+      "state_code": "IA",
+      "dates": "Daily",
+      "hours": "9:00am - 9:00pm",
+      "latitude": 42.514646,
+      "longitude": -96.409785,
+      "instructions": "Pick up signs from the front porch"
   }
 ];
 
