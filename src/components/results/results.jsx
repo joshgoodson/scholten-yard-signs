@@ -13,7 +13,7 @@ class Results extends React.Component {
     }
 
     selectPlace = (place) => {
-        if (place != this.state.selectedPlace) {
+        if (place !== this.state.selectedPlace) {
             this.setState({ selectedPlace: place })
         } else {
             this.setState({selectedPlace: null})
