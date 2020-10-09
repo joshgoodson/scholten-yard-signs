@@ -283,6 +283,130 @@ const PICKUP_LOCATIONS = [
         "latitude": 43.185646,
         "longitude": -95.766146,
         "phone_number": "(712) 348-1906"
+    },
+    {
+        "location_id": 25,
+        "location_name": "Elizabeth Gray",
+        "address": "3903 Westlawn Dr",
+        "city": "Ames",
+        "state_code": "IA",
+        "zip": 50010,
+        "hours": "9am - 7pm",
+        "latitude": 42.060275,
+        "longitude": -93.641613,
+        "instructions": "Yard signs will be out on the front porch, take what you can use and leave your name and number of signs taken on the sheet"
+    },
+    {
+        "location_id": 26,
+        "location_name": "Holly Master",
+        "address": "911 E Dakota Ave",
+        "city": "George",
+        "state_code": "IA",
+        "zip": 51237,
+        "latitude": 43.345415,
+        "longitude": -95.987687,
+        "phone_number": "(712) 348-4556",
+        "instructions": "Pick up signs from the wrap-around porch"
+    },
+    {
+        "location_id": 27,
+        "location_name": "Gilbert Flooring",
+        "address": "713 Seneca Street",
+        "city": "Webster City",
+        "state_code": "IA",
+        "zip": 50595,
+        "hours": "M-F 8am-5pm, Saturdays 8am-1pm",
+        "latitude": 42.468837,
+        "longitude": -93.817312
+    },
+    {
+        "location_id": 28,
+        "location_name": "Jennifer Breister",
+        "address": "1720 S Seymour Ave",
+        "city": "Garner",
+        "state_code": "IA",
+        "zip": 50438,
+        "hours": "M-F 6pm-9pm, Weekends 7am-7pm",
+        "latitude": 43.087422,
+        "longitude": -93.599383
+    },
+    {
+        "location_id": 29,
+        "location_name": "Amanda Glaser",
+        "address": "17 W Gardner St",
+        "city": "New Hampton",
+        "state_code": "IA",
+        "zip": 50659,
+        "hours": "9am - 9pm",
+        "latitude": 43.064999,
+        "longitude": -92.316463,
+        "instructions": "Pick up signs from the porch"
+    },
+    {
+        "location_id": 30,
+        "location_name": "Brad Dewit",
+        "address": "804 Holder Street",
+        "city": "Larchwood",
+        "state_code": "IA",
+        "dates": "Sundays or by appointment",
+        "latitude": 43.452742,
+        "longitude": -96.438625,
+        "phone_number": "(712) 281-5521",
+        "instructions": "Please text ahead"
+    },
+    {
+        "location_id": 31,
+        "location_name": "Steve King",
+        "address": "1208 E Lucas St",
+        "city": "Algona",
+        "state_code": "IA",
+        "zip": 50511,
+        "hours": "9am - 9pm",
+        "latitude": 43.071655,
+        "longitude": -94.222422
+    },
+    {
+        "location_id": 32,
+        "location_name": "Adam Benson",
+        "address": "812 Amber Dr",
+        "city": "Cherokee",
+        "state_code": "IA",
+        "zip": 51012,
+        "latitude": 42.739497,
+        "longitude": -95.544088,
+        "phone_number": "(712) 229-3785",
+        "instructions": "Please text ahead"
+    },
+    {
+        "location_id": 33,
+        "location_name": "Bev Evans",
+        "address": "6336 Y Ave",
+        "city": "Aurelia",
+        "state_code": "IA",
+        "latitude": 42.600028,
+        "longitude": -95.408968,
+        "phone_number": "(712) 229-1198",
+        "instructions": "Please call or text ahead"
+    },
+    {
+        "location_id": 34,
+        "location_name": "Michele Pirie",
+        "address": "601 Garfield",
+        "city": "Rolfe",
+        "state_code": "IA",
+        "latitude": 42.81586,
+        "longitude": -94.527594,
+        "phone_number": "(515) 302-5013"
+    },
+    {
+        "location_id": 35,
+        "location_name": "Dick Gruber",
+        "address": "203 2nd Ave NW",
+        "city": "Pocahontas",
+        "state_code": "IA",
+        "latitude": 42.734151,
+        "longitude": -94.672212,
+        "phone_number": "(712) 450-3249"
     }
 ];
 
