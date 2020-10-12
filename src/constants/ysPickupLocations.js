@@ -408,6 +408,7 @@ const PICKUP_LOCATIONS = [
       "phone_number": "(712) 450-3249"
   },
   {
+      "location_id": 36,
       "location_name": "Kathy Eck",
       "address": "210 4th St S",
       "city": "Dakota City",
@@ -417,7 +418,20 @@ const PICKUP_LOCATIONS = [
       "longitude": -94.202916,
       "phone_number": "(515) 368-4749 cell (515) 332-4749 home",
       "instructions": "Please call, text, or email ahead. email: eck@goldfieldaccess.net"
-  }
+  },
+  {
+    "location_id": 37,
+    "location_name": "Randy Mings",
+    "address": "1209 5th St",
+    "city": "Onawa",
+    "state_code": "IA",
+    "zip": 51040,
+    "hours": "8am - dark",
+    "latitude": 42.023524,
+    "longitude": -96.089563,
+    "phone_number": "(712) 420-0491",
+    "instructions": "Pick up a sign from the box by the front door, delivery requests available for elderly or handicapped folks"
+}
 ];
 
 export default PICKUP_LOCATIONS;
