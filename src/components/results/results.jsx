@@ -13,14 +13,13 @@ class Results extends React.Component {
     }
 
     scrollToItem = (result) => {
-        debugger
         if (result != null) {
             const selectedResult = document.getElementById(result.location_id)
             if (selectedResult != null) {
                 selectedResult.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'start',
-                });
+                    block: 'center',
+                }); 
             }
         }
     }
