@@ -12,6 +12,18 @@ class Results extends React.Component {
         };
     }
 
+    scrollToItem = (result) => {
+        if (result != null) {
+            const selectedResult = document.getElementById(result.location_id)
+            if (selectedResult != null) {
+                selectedResult.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                }); 
+            }
+        }
+    }
+
     selectPlace = (place) => {
         if (place !== this.state.selectedPlace) {
             this.setState({ selectedPlace: place })
@@ -54,7 +66,7 @@ class Results extends React.Component {
                         <Result result={null} onClick={i => this.selectPlace(null)}/>
                         <p className="results__back_link" onClick={this.props.clearResults}>Back to search</p>
                     </div>
-                    <MapsPage results={this.props.results} selectPlace={this.selectPlace} selectedPlace={this.state.selectedPlace}/>
+                    <MapsPage results={this.props.results} selectPlace={this.selectPlace} selectedPlace={this.state.selectedPlace} scrollToItem={this.scrollToItem}/>
                 </div>
             )
         } else {

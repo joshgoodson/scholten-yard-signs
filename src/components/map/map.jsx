@@ -32,6 +32,11 @@ export class MapContainer extends React.Component {
       map.fitBounds(bounds);
     };
 
+    onMarkerClick = (result, selectPlace) => {
+      selectPlace()
+      this.props.scrollToItem(result)
+    }
+
     render() {
         return (
             <Map
@@ -45,11 +50,10 @@ export class MapContainer extends React.Component {
               yesIWantToUseGoogleMapApiInternals
             >
             { this.props.results.map((result) => {
-              const onClick = this.props.selectPlace.bind(this, result)
                 return <Marker
                         className={this.props.selectedPlace === result ? "location-marker--selected" : "location-marker"}
                         key={result.location_id}
-                        onClick={onClick}
+                        onClick={() => this.onMarkerClick(result, this.props.selectPlace.bind(this, result))}
                         position={{ lat: result.latitude, lng: result.longitude }}
                         selectedPlace={this.props.selectedPlace}
                       />
