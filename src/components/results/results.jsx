@@ -18,7 +18,7 @@ class Results extends React.Component {
             if (selectedResult != null) {
                 selectedResult.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center',
+                    block: 'start',
                 }); 
             }
         }
