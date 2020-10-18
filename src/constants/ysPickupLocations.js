@@ -431,6 +431,19 @@ const PICKUP_LOCATIONS = [
     "longitude": -96.089563,
     "phone_number": "(712) 420-0491",
     "instructions": "Pick up a sign from the box by the front door, delivery requests available for elderly or handicapped folks"
+},
+{
+    "location_id": 38,
+    "location_name": "Allyson Munger",
+    "address": "105 Park St",
+    "city": "Schaller",
+    "state_code": "IA",
+    "zip": 51053,
+    "hours": "Afternoons",
+    "latitude": 42.497077,
+    "longitude": -95.292494,
+    "phone_number": "(712) 229-5816",
+    "instructions": "Barn sign also available!"
 }
 ];
 
