@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleApiWrapper } from 'google-maps-react';
+import LoadingIndicator from "../loadingindicator/loadingindicator"
 import SearchBox from '../searchbox/searchbox'
 import Results from '../results/results'
 import PICKUP_LOCATIONS from '../../constants/ysPickupLocations'
@@ -10,7 +11,8 @@ export class Main extends React.Component{
         super(props);
         const { google } = props;
         this.state = {
-            results: null
+            results: null,
+            isLoading: false
         };
 
         this.searchForNearestPickup = async function (location) {
@@ -23,6 +25,10 @@ export class Main extends React.Component{
             var service = new google.maps.DistanceMatrixService();
       
             var pickup_by_distance = [];
+
+            this.setState({
+              isLoading: true
+            })
       
             for (let i = 0; i < PICKUP_LOCATIONS.length; i++) {
               const pickup = PICKUP_LOCATIONS[i];
@@ -62,9 +68,10 @@ export class Main extends React.Component{
                 }
               );
             }
-            
+
             this.setState({
               results: pickup_by_distance,
+              isLoading: false
             });
           };
     }
@@ -77,6 +84,7 @@ export class Main extends React.Component{
                     <h2>Find the nearest location to pickup a yard sign.</h2>
                     <SearchBox searchForNearestPickup={(i) => this.searchForNearestPickup(i)} hasResults={this.state.results != null}/>
                     <Results results={this.state.results} clearResults={() => this.setState({results: null})}/>
+                    <LoadingIndicator isLoading={this.state.isLoading} />
                 </div>
             </div>
         )

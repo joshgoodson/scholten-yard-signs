@@ -9,7 +9,7 @@
             rgba(9, 50, 84, 0.70), 
             rgba(9, 50, 84, 0.70)
         ),
-        url("../../img/background-image.jpg");
+        url("../../img/background-image-smaller.png");
     background-size: cover;
 }
 
@@ -21,6 +21,7 @@
     padding-top: 30vh;
     
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 
 .content__container.content__container--with-results {
@@ -29,6 +30,7 @@
     padding-top: 0px;
     
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 
 .content__container h1 {
@@ -42,6 +44,7 @@
     margin: 40px 20px;
 
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 .content__container.content__container--with-results h1{
     max-height: 0;
@@ -49,6 +52,7 @@
     margin: 0;
 
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 
 .content__container h2 {
@@ -62,6 +66,7 @@
     text-align: center;
 
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 
 .content__container.content__container--with-results h2{
@@ -70,6 +75,7 @@
     margin-top: 0;
     
     transition: all ease-in var(--transition-time);
+    transition-delay: var(--transition-time);
 }
 
  /* ------ MOBILE ------- */

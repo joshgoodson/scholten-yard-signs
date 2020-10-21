@@ -18,9 +18,13 @@ export class MapContainer extends React.Component {
       const { google } = mapProps;
       const bounds = new google.maps.LatLngBounds();
     
-      this.props.results.forEach(marker => {
-        bounds.extend(new google.maps.LatLng(marker.latitude, marker.longitude));
-      });
+      const topEightResults = this.props.results?.slice(0,7)
+      
+      if (topEightResults) {
+        topEightResults.forEach(marker => {
+          bounds.extend(new google.maps.LatLng(marker.latitude, marker.longitude));
+        })
+      }
 
       if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
         var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.005, bounds.getNorthEast().lng() + 0.005);
@@ -71,14 +75,14 @@ export class MapContainer extends React.Component {
                       rel="noopener noreferrer"
                       href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${result.address} ${result.city} ${result.state_code} ${result.zip}`)}`}
                     > 
-                      <p>
+                      <p className="infowindow__address-text">
                         {result.address}<br/>
                         {result.city}, {result.state_code} {result.zip}
                       </p>
                     </a>
-                    <p className="infowindow__name">{result.location_name}</p>
-                    <p className="infowindow__hours">{result.dates}</p>
-                    <p className="infowindow__hours">{result.hours}</p>
+                    <p className="infowindow__subheader">Volunteer Contact</p>
+                    <p className="infowindow__contact-details">{result.location_name}</p>
+                    { !!result.phone_number && <p className="infowindow__contact-details">{result.phone_number}</p> }
 
                   </div>
                 </InfoWindow>

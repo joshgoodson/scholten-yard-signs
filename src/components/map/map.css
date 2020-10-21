@@ -2,7 +2,7 @@
  /* The !important is necessary here to override inline styles applied by google maps that cannot be undone or restructured*/
 .gm-style .gm-style-iw {
     display: block !important;
-    padding: 16px !important;
+    padding: 12px 0 0 12px !important;
     top: -45px !important;
     left: 0 !important;
 }
@@ -39,9 +39,22 @@
 .infowindow__address:hover {
     text-decoration: underline;
 }
+   
+.infowindow__address-text{
+    margin: 0px;
+}
 
-.infowindow__hours,
-.infowindow__name {
+.infowindow__subheader {
+    margin: 12px 0px 4px 0px;
+    
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--light-grey);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.infowindow__contact-details {
     margin: 0;
     
     color: var(--light-grey);
@@ -49,18 +62,10 @@
     font-weight: 400;
 }
 
-.infowindow__name {
-    margin-bottom: 12px;
-}
-
  /* ------ MOBILE ------- */
 @media screen and (max-width: 992px) {
     .infowindow__address, .location__remaining-signs {
         font-size: 12px;
-    }
-
-    .infowindow__address p{
-        margin: 0px;
     }
 
     .infowindow__hours {
