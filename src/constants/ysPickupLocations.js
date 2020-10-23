@@ -444,6 +444,15 @@ const PICKUP_LOCATIONS = [
         "longitude": -95.292494,
         "phone_number": "(712) 229-5816",
         "instructions": "Barn sign also available!"
+    },
+    {
+        "location_name": "Tonya Ramsey",
+        "address": "2924 Rolf Ave",
+        "city": "Sac City",
+        "state_code": "IA",
+        "zip": 50583,
+        "phone_number": "(712) 797-0117",
+        "instructions": "Text ahead, willing to leave signs at the end of the driveway"
     }
 ];
 
