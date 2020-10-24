@@ -451,6 +451,8 @@ const PICKUP_LOCATIONS = [
         "city": "Sac City",
         "state_code": "IA",
         "zip": 50583,
+        "latitude": 42.364,
+        "longitude": -95.010951,
         "phone_number": "(712) 797-0117",
         "instructions": "Text ahead, willing to leave signs at the end of the driveway"
     }
